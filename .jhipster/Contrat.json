@@ -1,0 +1,59 @@
+{
+  "name": "Contrat",
+  "fields": [
+    {
+      "fieldName": "dateDebut",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "montantLoyerNu",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "montantCharges",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "periodiciteLoyer",
+      "fieldType": "Periode",
+      "fieldValues": "Mensuel,Annuel,Trimestriel,Semestriel"
+    },
+    {
+      "fieldName": "montantDepotGarantie",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "infosComplementaires",
+      "fieldType": "String"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "biens",
+      "otherEntityRelationshipName": "contrat",
+      "relationshipName": "bien",
+      "otherEntityField": "id",
+      "ownerSide": true
+    },
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "locataire",
+      "otherEntityRelationshipName": "contrat",
+      "relationshipName": "locataire",
+      "otherEntityField": "id",
+      "ownerSide": true
+    }
+  ],
+  "changelogDate": "20201107215718",
+  "entityTableName": "contrat",
+  "dto": "mapstruct",
+  "pagination": "no",
+  "service": "serviceImpl",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}

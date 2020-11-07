@@ -1,0 +1,62 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="contrat">
+            <h2><span jhiTranslate="gestLocativeApp.contrat.detail.title">Contrat</span> {{ contrat.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="gestLocativeApp.contrat.dateDebut">Date Debut</span></dt>
+                <dd>
+                    <span>{{ contrat.dateDebut }}</span>
+                </dd>
+                <dt><span jhiTranslate="gestLocativeApp.contrat.montantLoyerNu">Montant Loyer Nu</span></dt>
+                <dd>
+                    <span>{{ contrat.montantLoyerNu }}</span>
+                </dd>
+                <dt><span jhiTranslate="gestLocativeApp.contrat.montantCharges">Montant Charges</span></dt>
+                <dd>
+                    <span>{{ contrat.montantCharges }}</span>
+                </dd>
+                <dt><span jhiTranslate="gestLocativeApp.contrat.periodiciteLoyer">Periodicite Loyer</span></dt>
+                <dd>
+                    <span jhiTranslate="{{ 'gestLocativeApp.Periode.' + contrat.periodiciteLoyer }}">{{ contrat.periodiciteLoyer }}</span>
+                </dd>
+                <dt><span jhiTranslate="gestLocativeApp.contrat.montantDepotGarantie">Montant Depot Garantie</span></dt>
+                <dd>
+                    <span>{{ contrat.montantDepotGarantie }}</span>
+                </dd>
+                <dt><span jhiTranslate="gestLocativeApp.contrat.infosComplementaires">Infos Complementaires</span></dt>
+                <dd>
+                    <span>{{ contrat.infosComplementaires }}</span>
+                </dd>
+                <dt><span jhiTranslate="gestLocativeApp.contrat.bien">Bien</span></dt>
+                <dd>
+                    <div *ngIf="contrat.bienId">
+                        <a [routerLink]="['/biens', contrat.bienId, 'view']">{{ contrat.bienId }}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="gestLocativeApp.contrat.locataire">Locataire</span></dt>
+                <dd>
+                    <div *ngIf="contrat.locataireId">
+                        <a [routerLink]="['/locataire', contrat.locataireId, 'view']">{{ contrat.locataireId }}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/contrat', contrat.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

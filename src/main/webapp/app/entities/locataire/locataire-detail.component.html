@@ -1,0 +1,52 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="locataire">
+            <h2><span jhiTranslate="gestLocativeApp.locataire.detail.title">Locataire</span> {{ locataire.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="gestLocativeApp.locataire.nom">Nom</span></dt>
+                <dd>
+                    <span>{{ locataire.nom }}</span>
+                </dd>
+                <dt><span jhiTranslate="gestLocativeApp.locataire.prenom">Prenom</span></dt>
+                <dd>
+                    <span>{{ locataire.prenom }}</span>
+                </dd>
+                <dt><span jhiTranslate="gestLocativeApp.locataire.email">Email</span></dt>
+                <dd>
+                    <span>{{ locataire.email }}</span>
+                </dd>
+                <dt><span jhiTranslate="gestLocativeApp.locataire.telephone">Telephone</span></dt>
+                <dd>
+                    <span>{{ locataire.telephone }}</span>
+                </dd>
+                <dt><span jhiTranslate="gestLocativeApp.locataire.dateNaissance">Date Naissance</span></dt>
+                <dd>
+                    <span>{{ locataire.dateNaissance }}</span>
+                </dd>
+                <dt><span jhiTranslate="gestLocativeApp.locataire.adresse">Adresse</span></dt>
+                <dd>
+                    <div *ngIf="locataire.adresseId">
+                        <a [routerLink]="['/adresse', locataire.adresseId, 'view']">{{ locataire.adresseId }}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/locataire', locataire.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

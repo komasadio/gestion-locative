@@ -1,0 +1,29 @@
+{
+  "gestLocativeApp": {
+    "contrat": {
+      "home": {
+        "title": "Contrats",
+        "createLabel": "Créer un nouveau Contrat",
+        "createOrEditLabel": "Créer ou éditer un Contrat",
+        "notFound": "Aucun Contrat trouvé"
+      },
+      "created": "Un nouveau Contrat a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Contrat avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Contrat avec l'identifiant {{ param }} a été supprimé",
+      "delete": {
+        "question": "Etes-vous certain de vouloir supprimer le Contrat {{ id }} ?"
+      },
+      "detail": {
+        "title": "Contrat"
+      },
+      "dateDebut": "Date Debut",
+      "montantLoyerNu": "Montant Loyer Nu",
+      "montantCharges": "Montant Charges",
+      "periodiciteLoyer": "Periodicite Loyer",
+      "montantDepotGarantie": "Montant Depot Garantie",
+      "infosComplementaires": "Infos Complementaires",
+      "bien": "Bien",
+      "locataire": "Locataire"
+    }
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "name": "Biens",
+  "fields": [
+    {
+      "fieldName": "estMeuble",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "description",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "type",
+      "fieldType": "TypeBien",
+      "fieldValues": "Appartement,Immeuble,Garage,Parking,Local_Commercial,Maison,Terrain_Nu"
+    },
+    {
+      "fieldName": "surface",
+      "fieldType": "Double"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "adresse",
+      "otherEntityRelationshipName": "biens",
+      "relationshipName": "adresse",
+      "otherEntityField": "id",
+      "ownerSide": true
+    }
+  ],
+  "changelogDate": "20201107215518",
+  "entityTableName": "biens",
+  "dto": "mapstruct",
+  "pagination": "pagination",
+  "service": "serviceImpl",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}

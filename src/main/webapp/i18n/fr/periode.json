@@ -1,0 +1,11 @@
+{
+  "gestLocativeApp": {
+    "Periode": {
+      "null": "",
+      "Mensuel": "Mensuel",
+      "Annuel": "Annuel",
+      "Trimestriel": "Trimestriel",
+      "Semestriel": "Semestriel"
+    }
+  }
+}
