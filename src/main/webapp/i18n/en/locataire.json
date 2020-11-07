@@ -1,0 +1,27 @@
+{
+  "gestLocativeApp": {
+    "locataire": {
+      "home": {
+        "title": "Locataires",
+        "createLabel": "Create a new Locataire",
+        "createOrEditLabel": "Create or edit a Locataire",
+        "notFound": "No Locataires found"
+      },
+      "created": "A new Locataire is created with identifier {{ param }}",
+      "updated": "A Locataire is updated with identifier {{ param }}",
+      "deleted": "A Locataire is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Locataire {{ id }}?"
+      },
+      "detail": {
+        "title": "Locataire"
+      },
+      "nom": "Nom",
+      "prenom": "Prenom",
+      "email": "Email",
+      "telephone": "Telephone",
+      "dateNaissance": "Date Naissance",
+      "adresse": "Adresse"
+    }
+  }
+}

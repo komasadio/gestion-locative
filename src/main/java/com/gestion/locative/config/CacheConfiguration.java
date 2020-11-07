@@ -47,6 +47,11 @@ public class CacheConfiguration {
             createCache(cm, com.gestion.locative.domain.User.class.getName());
             createCache(cm, com.gestion.locative.domain.Authority.class.getName());
             createCache(cm, com.gestion.locative.domain.User.class.getName() + ".authorities");
+            createCache(cm, com.gestion.locative.domain.Biens.class.getName());
+            createCache(cm, com.gestion.locative.domain.Locataire.class.getName());
+            createCache(cm, com.gestion.locative.domain.Contrat.class.getName());
+            createCache(cm, com.gestion.locative.domain.Adresse.class.getName());
+            createCache(cm, com.gestion.locative.domain.Pays.class.getName());
             // jhipster-needle-ehcache-add-entry
         };
     }

@@ -1,0 +1,26 @@
+{
+  "gestLocativeApp": {
+    "biens": {
+      "home": {
+        "title": "Biens",
+        "createLabel": "Create a new Biens",
+        "createOrEditLabel": "Create or edit a Biens",
+        "notFound": "No Biens found"
+      },
+      "created": "A new Biens is created with identifier {{ param }}",
+      "updated": "A Biens is updated with identifier {{ param }}",
+      "deleted": "A Biens is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Biens {{ id }}?"
+      },
+      "detail": {
+        "title": "Biens"
+      },
+      "estMeuble": "Est Meuble",
+      "description": "Description",
+      "type": "Type",
+      "surface": "Surface",
+      "adresse": "Adresse"
+    }
+  }
+}

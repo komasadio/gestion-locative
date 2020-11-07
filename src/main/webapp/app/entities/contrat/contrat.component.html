@@ -1,0 +1,83 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="gestLocativeApp.contrat.home.title">Contrats</span>
+
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-contrat" [routerLink]="['/contrat/new']">
+            <fa-icon icon="plus"></fa-icon>
+            <span  jhiTranslate="gestLocativeApp.contrat.home.createLabel">
+            Create a new Contrat
+            </span>
+        </button>
+    </h2>
+
+    <jhi-alert-error></jhi-alert-error>
+
+    <jhi-alert></jhi-alert>
+
+    <div class="alert alert-warning" id="no-result" *ngIf="contrats?.length === 0">
+        <span jhiTranslate="gestLocativeApp.contrat.home.notFound">No contrats found</span>
+    </div>
+
+    <div class="table-responsive" id="entities" *ngIf="contrats && contrats.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+                <tr>
+                    <th scope="col" ><span jhiTranslate="global.field.id">ID</span></th>
+                    <th scope="col" ><span jhiTranslate="gestLocativeApp.contrat.dateDebut">Date Debut</span></th>
+                    <th scope="col" ><span jhiTranslate="gestLocativeApp.contrat.montantLoyerNu">Montant Loyer Nu</span></th>
+                    <th scope="col" ><span jhiTranslate="gestLocativeApp.contrat.montantCharges">Montant Charges</span></th>
+                    <th scope="col" ><span jhiTranslate="gestLocativeApp.contrat.periodiciteLoyer">Periodicite Loyer</span></th>
+                    <th scope="col" ><span jhiTranslate="gestLocativeApp.contrat.montantDepotGarantie">Montant Depot Garantie</span></th>
+                    <th scope="col" ><span jhiTranslate="gestLocativeApp.contrat.infosComplementaires">Infos Complementaires</span></th>
+                    <th scope="col" ><span jhiTranslate="gestLocativeApp.contrat.bien">Bien</span></th>
+                    <th scope="col" ><span jhiTranslate="gestLocativeApp.contrat.locataire">Locataire</span></th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let contrat of contrats ;trackBy: trackId">
+                    <td><a [routerLink]="['/contrat', contrat.id, 'view']">{{ contrat.id }}</a></td>
+                    <td>{{ contrat.dateDebut | date:'medium' }}</td>
+                    <td>{{ contrat.montantLoyerNu }}</td>
+                    <td>{{ contrat.montantCharges }}</td>
+                    <td jhiTranslate="{{ 'gestLocativeApp.Periode.' + contrat.periodiciteLoyer }}">{{ contrat.periodiciteLoyer }}</td>
+                    <td>{{ contrat.montantDepotGarantie }}</td>
+                    <td>{{ contrat.infosComplementaires }}</td>
+                    <td>
+                        <div *ngIf="contrat.bienId">
+                            <a [routerLink]="['/biens', contrat.bienId , 'view']" >{{ contrat.bienId }}</a>
+                        </div>
+                    </td>
+                    <td>
+                        <div *ngIf="contrat.locataireId">
+                            <a [routerLink]="['/locataire', contrat.locataireId , 'view']" >{{ contrat.locataireId }}</a>
+                        </div>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group">
+                            <button type="submit"
+                                    [routerLink]="['/contrat', contrat.id, 'view']"
+                                    class="btn btn-info btn-sm">
+                                <fa-icon icon="eye"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                            </button>
+
+                            <button type="submit"
+                                    [routerLink]="['/contrat', contrat.id, 'edit']"
+                                    class="btn btn-primary btn-sm">
+                                <fa-icon icon="pencil-alt"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                            </button>
+
+                            <button type="submit" (click)="delete(contrat)"
+                                    class="btn btn-danger btn-sm">
+                                <fa-icon icon="times"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
