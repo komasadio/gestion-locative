@@ -1,0 +1,71 @@
+
+entity Biens {
+    estMeuble Boolean,
+    description String,
+    type TypeBien,
+    surface Double
+}
+enum TypeBien {
+ Appartement, Immeuble, Garage,
+ Parking, Local_Commercial, Maison,
+ Terrain_Nu
+}
+entity Locataire {
+    nom String,
+	prenom String,
+	email String,
+	telephone String,
+	dateNaissance Instant,
+}
+
+entity Contrat {
+ dateDebut Instant,
+ montantLoyerNu Double,
+ montantCharges Double,
+ periodiciteLoyer Periode,
+ montantDepotGarantie Double
+ infosComplementaires String
+ 
+}
+
+entity Adresse {
+  libelle String,
+  ville String,
+  commune String,
+  departement String,
+}
+entity Pays {
+ nom String
+}
+
+
+enum Periode {
+Mensuel, Annuel, Trimestriel,
+Semestriel
+}
+
+relationship OneToOne {
+	Contrat{bien} to Biens,
+    Contrat{locataire} to Locataire
+}
+
+relationship OneToOne{
+    Adresse{pays} to Pays
+}
+relationship OneToOne{
+  Biens{adresse} to Adresse,
+  Locataire{adresse} to Adresse
+}
+
+
+// Set pagination options
+paginate Locataire, Biens with pagination
+
+ //Use Data Transfer Objects (DTO)
+ dto * with mapstruct
+
+// Set service options to all except few
+service all with serviceImpl
+
+// Set an angular suffix
+// angularSuffix * with mySuffix
